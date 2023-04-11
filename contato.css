@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+    background-color: #10121A;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #ebebeb;
+}
+
+/* MENU HAMBURGUER*/
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.checkbox {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 9999;
+    transition: 400ms ease-in-out 0s;
+    
+}
+.checkbox:hover{
+    background-color: #267fa5;
+}
+
+.checkbox .trace {
+    width: 50px;
+    height: 2px;
+    background-color: #ebebeb;
+    position: absolute;
+    border-radius: 4px;
+    transition: .5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1){
+    top: 26px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2){
+    top: 46px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3){
+    top: 66px;
+    transform: rotate(0);
+}
+
+#toggle {
+    display: none;
+}
+
+/*menu*/
+
+.menu {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background-color: transparent;
+    height: 4px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px #ebebeb;
+    z-index: -1;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menu-items {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menu-items ul {
+    list-style-type: none;
+}
+
+.menu-items li:hover {
+    background-color: #06638b;
+    border-radius: 20%;
+    position: relative;
+    left: 10%;
+}
+
+.menu-items ul li a {
+    margin: 10px 0;
+    color: #ebebeb;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+
+/*animação do menu*/
+
+#toggle:checked + .checkbox .trace:nth-child(1) {
+    transform: rotate(45deg);
+    top: 48px;
+}
+#toggle:checked + .checkbox .trace:nth-child(2) {
+    transform: translate(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}#toggle:checked + .checkbox .trace:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 48px;
+}
+
+#toggle:checked + .checkbox {
+    background-color: #267fa5;
+}
+
+#toggle:checked ~ .menu {
+    box-shadow: 0px 0px 0px 100vmax #267fa5;
+    z-index: 1;
+}
+
+#toggle:checked ~ .menu-items {
+    visibility: visible;
+    opacity: 1;
+}
+/*skills*/
+/*.skills {
+    display: block;
+}*/
+
+.contato h2 {
+    color: #ebebeb;
+    font-size: 3.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    margin-top: 0;
+    position: relative;
+    padding-bottom: 0;
+    padding-top: 3rem;
+    padding-left: 0;
+}
+
+
+.title .decoration {
+    position: relative;
+    top: 0;
+    left: 7px;
+    width: 7.4rem;
+    height: 0.33rem;
+    background-color: rgb(93, 145, 241);
+    border-radius: 15px;
+    
+}
+
+.title .decoration .color {
+    position: relative;
+    top: 0px;
+    bottom: 0px;
+    width: 3.5rem;
+    height: 0.33rem;
+    background-color: #5d557a;
+    border-radius: 15px;
+    left: 0px;
+}
+
+.estrutura {
+   
+    padding: 2px 20px 30px 20px;
+    
+}
+
+.tela {
+    padding: 5rem;
+}
+
+.contato .contact-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.contact-title {
+    color: #ebebeb;
+  /*  padding: 1rem 0;*/
+    font-size: 1.8rem;
+}
+
+.contato .contact-section .contact-title h4 {
+    color: #ebebeb;
+    padding: 1rem 0;
+    font-size: 2rem;
+
+}
+
+.form-field {
+    margin-top: 2rem;
+    position: relative;
+    width: 100%;
+}
+
+.label {
+    position: absolute;
+    left: 20px;
+    top: -19px;
+    display: inline-block;
+    background-color: #1e1f22;
+    padding: 0 0.5rem;
+    color: inherit;
+    cursor: default;
+    font-size: 1.5rem;
+
+}
+
+.input  {
+    border: 1px solid #5d557a;
+    outline: none;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    color: #ebebeb;
+    font-size: 1.5rem;
+}
+
+.textarea {
+    background-color: transparent;
+    padding: 0.8rem 1rem;
+    outline: none;
+    border: 1px solid #5d557a;
+    color: inherit;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1.5rem;
+}
+
+.error {
+    color: rgb(240, 121, 121);
+    font-style: italic;
+}
+
+.but {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.contato .contact-section .f-button {
+    margin-bottom: 3rem;
+}
+
+.f-button {
+    margin-bottom: 3rem;
+    padding-right: 5rem;
+    
+}
+
+.botao-email:disabled {
+    background-color: #267fa5;
+    padding: 0.8rem 2.5rem;
+    color: #ebebeb;
+    cursor: pointer;
+    display: inline-block;
+    font-size: inherit;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.4s ease-in-out 0s;
+
+}
+
+.botao-email {
+    padding: 0.8rem 2,5rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: inherit;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.botao-email::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0.2rem;
+    transition: all 0.4s ease-in-out 0s;
+    left: 0px;
+    bottom: 0;
+    opacity: 0.7;
+}
+
+.botao-email:hover {
+    background-color: #1e1f22;
+}
+
+.botao-reset {
+    background-color: #267fa5;
+    padding: 0.8rem 2.5rem;
+    color: #ebebeb;
+    cursor: pointer;
+    display: inline-block;
+    font-size: inherit;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.botao-reset::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0.2rem;
+    transition: all 0.4s ease-in-out 0s;
+    left: 0px;
+    bottom: 0;
+    opacity: 0.7;
+}
+.botao-reset:hover {
+    background-color: #1e1f22;
+}
+
+.contato .contact-section .right-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.est-telefone:not(:last-child) {
+    margin-bottom: 2rem;
+
+}
+
+.est-telefone {
+    padding: 0rem 0rem;
+    background-color: #1e1f22;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.est-telefone .left-content {
+    padding: 1.5rem;
+    border: 1px solid #1e1f22;
+    font-size: 2rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+}
+
+.est-telefone .left-content svg {
+    font-size: 2rem;
+}
+
+.MuiSvgIcon-root {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.est-telefone .right-content h6 {
+    color: #ebebeb;
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+    margin: 10px 0;
+    
+}
+
+.est-telefone .right-content p {
+    font-size: 1.2rem;
+    padding: 0.1rem 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+}
